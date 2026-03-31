@@ -20,7 +20,8 @@ const coreFaculty = [
   {
     name: "Victor Kryssanov",
     title: "Professor, College of Information Science and Engineering",
-    text: "Data science, machine learning, and smart systems for modern society and intelligent decision-making.",
+    text: "Statistical simulation and modeling, Green AI, Smart building (transportation, city, etc.), Smart agriculture and mariculture.",
+    image: "/kryssanov.jpg",
   },
   {
     name: "Mate Kovacs",
@@ -31,7 +32,7 @@ const coreFaculty = [
     name: "Shady Salama",
     title: "Assistant Professor, College of Information Science and Engineering",
     text: "Artificial intelligence, combinatorial optimization, simulation modeling, evolutionary algorithms, and intelligent manufacturing.",
-    image: "/shady2.jpg",
+    image: "/salama.jpg",
   },
 ];
 
@@ -685,7 +686,7 @@ export default function Page() {
 
       <style>{`
         html {
-          scroll-behaviour: smooth;
+          scroll-behavior: smooth;
         }
 
         body {
