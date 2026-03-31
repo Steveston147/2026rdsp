@@ -21,7 +21,7 @@ const coreFaculty = [
     name: "Victor Kryssanov",
     title: "Professor, College of Information Science and Engineering",
     text: "Statistical simulation and modeling, Green AI, Smart building (transportation, city, etc.), Smart agriculture and mariculture.",
-    image: "/kryssanov.jpg",
+    image: "/Johokai2025_2.jpg",
   },
   {
     name: "Mate Kovacs",
