@@ -595,7 +595,23 @@ export default function Page() {
             ))}
           </div>
         </section>
+<section className="section">
+  <div className="section-head">
+    <p className="section-kicker">Eligibility</p>
+    <h2>Who can apply</h2>
+  </div>
 
+  <article className="card">
+    <ul className="list">
+      <li>
+        Applicants must be currently enrolled as undergraduate or graduate students.
+      </li>
+      <li>
+        High school students, gap year students, and working professionals are not eligible for this program.
+      </li>
+    </ul>
+  </article>
+</section>
         <section id="accommodation" className="section alt">
           <div className="section-head">
             <p className="section-kicker">Accommodation</p>
