@@ -32,7 +32,7 @@ const coreFaculty = [
     name: "Shady Salama",
     title: "Assistant Professor, College of Information Science and Engineering",
     text: "Artificial intelligence, simulation modeling, evolutionary algorithms, and combinatorial optimization.",
-    image: "/salama.jpg",
+    image: "/shady2.jpg",
   },
 ];
 
