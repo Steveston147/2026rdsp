@@ -30,7 +30,8 @@ const coreFaculty = [
   {
     name: "Shady Salama",
     title: "Assistant Professor, College of Information Science and Engineering",
-    text: "Artificial intelligence, machine learning, and optimisation for efficient solutions in complex systems.",
+    text: "Artificial intelligence, combinatorial optimization, simulation modeling, evolutionary algorithms, and intelligent manufacturing.",
+    image: "/salama.jpg",
   },
 ];
 
@@ -134,6 +135,11 @@ const quickFacts = [
     note: "A modern campus in Osaka with academic facilities, student spaces, dining options, and on-campus accommodation.",
   },
   {
+    label: "Program dates",
+    value: "July 16 – July 24, 2026",
+    note: "No classes on July 18, 19, and 20. These are free days.",
+  },
+  {
     label: "Program fee",
     value: "JPY 120,000 + JPY 5,000 service fee",
     note: "No scholarships, waivers, or partner discounts are available for this program.",
@@ -179,7 +185,7 @@ const noteItems = [
   "No academic credit will be awarded for this program.",
   "Participants must arrive on July 15 (the day before the program starts). Check-in is required between 3:00 PM and 5:00 PM.",
   "Check-out is scheduled for July 25 (the day after the program ends). Changes to the program period are not allowed.",
-  "There will be no classes on July 18 (Saturday), July 19 (Sunday), and July 20 (national holiday). These days are free for personal activities.",
+  "There will be no classes on July 18 (Saturday), July 19 (Sunday), and July 20 (national holiday). These days are scheduled as free days for personal activities.",
 ];
 
 export default function Page() {
@@ -679,7 +685,7 @@ export default function Page() {
 
       <style>{`
         html {
-          scroll-behavior: smooth;
+          scroll-behaviour: smooth;
         }
 
         body {
@@ -1160,111 +1166,132 @@ export default function Page() {
         }
 
         .card-copy {
-          padding: 20px 22px 24px;
+          padding-top: 18px;
         }
 
-        .fact-label {
+        .fact-card h3 {
           margin-bottom: 8px;
         }
 
         .list {
           margin: 0;
           padding-left: 20px;
+          display: grid;
+          gap: 10px;
         }
 
         .list li {
-          padding-left: 4px;
-          line-height: 1.72;
-        }
-
-        .list li + li {
-          margin-top: 8px;
+          font-size: 16px;
+          line-height: 1.7;
         }
 
         .cta-card {
           display: grid;
           grid-template-columns: 1fr auto;
-          gap: 24px;
+          gap: 20px;
           align-items: center;
-          padding: 30px;
-          background:
-            linear-gradient(135deg, rgba(181, 51, 59, 0.08) 0%, rgba(255, 255, 255, 0.96) 42%),
-            rgba(255, 255, 255, 0.96);
+          padding: 28px 30px;
         }
 
-        .cta-copy p {
+        .cta-copy p:not(.section-kicker) {
           margin-top: 10px;
-          max-width: 720px;
+          max-width: 760px;
         }
 
-        @media (max-width: 1024px) {
-          .hero,
-          .logo-band-card,
-          .two-col,
-          .cta-card,
-          .facts-grid,
-          .experience-grid,
-          .faculty-grid,
+        .final-cta {
+          padding-bottom: 8px;
+        }
+
+        @media (max-width: 1100px) {
           .grid.four,
           .four-up,
           .tech-mosaic,
           .activity-mosaic,
-          .accommodation-mosaic,
+          .accommodation-mosaic {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+
+          .facts-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
+
+        @media (max-width: 900px) {
+          .hero,
+          .practice-card,
+          .two-col,
           .campus-life-grid,
+          .cta-card,
+          .logo-band-card {
+            grid-template-columns: 1fr;
+          }
+
+          .faculty-grid,
+          .experience-grid,
           .real-campus-grid,
-          .practice-card {
+          .facts-grid {
             grid-template-columns: 1fr;
           }
 
           .hero-media {
-            min-height: 520px;
+            min-height: 460px;
           }
 
-          .campus-card.tall .card-image {
-            min-height: 360px;
-          }
-
+          .campus-card.tall .card-image,
           .practice-image {
             min-height: 320px;
-          }
-        }
-
-        @media (max-width: 720px) {
-          .page-shell {
-            width: min(100% - 20px, 1180px);
-            padding: 12px 0 52px;
           }
 
           .site-header {
             flex-direction: column;
             align-items: flex-start;
-            gap: 14px;
           }
+        }
 
-          .brand-logo {
-            width: 240px;
+        @media (max-width: 640px) {
+          .page-shell {
+            width: min(100%, calc(100% - 20px));
+            padding: 12px 0 56px;
           }
 
           .hero-copy,
-          .feature-card,
-          .faculty-card,
-          .fact-card,
           .card,
-          .cta-card {
-            padding: 20px;
-          }
-
-          .practice-card {
-            padding: 0;
-          }
-
-          .practice-copy {
+          .cta-card,
+          .logo-band-card {
             padding: 20px;
           }
 
           .hero-media {
-            min-height: 420px;
-            padding: 12px 12px 68px;
+            padding: 12px 12px 72px;
+            min-height: 360px;
+          }
+
+          .grid.four,
+          .four-up,
+          .tech-mosaic,
+          .activity-mosaic,
+          .accommodation-mosaic {
+            grid-template-columns: 1fr;
+          }
+
+          h1 {
+            font-size: 36px;
+          }
+
+          h2 {
+            font-size: 28px;
+          }
+
+          .brand-logo {
+            width: 220px;
+          }
+
+          .site-nav {
+            gap: 12px;
+          }
+
+          .btn {
+            width: 100%;
           }
 
           .hero-actions,
@@ -1272,40 +1299,13 @@ export default function Page() {
             flex-direction: column;
           }
 
-          .btn {
-            width: 100%;
-          }
-
-          .logo-band-card {
-            gap: 12px;
-            padding: 18px;
-          }
-
-          .logo-band-mark {
-            justify-content: flex-start;
-          }
-
-          .logo-band-mark img {
-            width: 56px;
-          }
-
           .faculty-photo-row {
             grid-template-columns: 72px 1fr;
-            gap: 12px;
           }
 
           .faculty-photo {
             width: 72px;
             height: 72px;
-            border-radius: 16px;
-          }
-
-          .real-campus-card .card-image {
-            height: 220px;
-          }
-
-          .practice-image {
-            min-height: 240px;
           }
         }
       `}</style>
