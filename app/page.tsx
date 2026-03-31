@@ -176,6 +176,10 @@ const noteItems = [
   "Program content, lecture titles, and exact activity details are subject to change.",
   "Participants must join from the first day to the final day.",
   "The program has limited capacity, so early application is strongly recommended.",
+  "No academic credit will be awarded for this program.",
+  "Participants must arrive on July 15 (the day before the program starts). Check-in is required between 3:00 PM and 5:00 PM.",
+  "Check-out is scheduled for July 25 (the day after the program ends). Changes to the program period are not allowed.",
+  "There will be no classes on July 18 (Saturday), July 19 (Sunday), and July 20 (national holiday). These days are free for personal activities.",
 ];
 
 export default function Page() {
