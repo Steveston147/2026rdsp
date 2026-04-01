@@ -26,7 +26,8 @@ const coreFaculty = [
   {
     name: "Mate Kovacs",
     title: "Assistant Professor, College of Information Science and Engineering",
-    text: "Artificial intelligence, natural language processing, and large-scale text and social data analysis.",
+    text: "Natural Language Processing for Civic Tech, Language Modeling and large-scale text and social data analysis. ",
+    image: "/kovac.jpg",
   },
   {
     name: "Shady Salama",
