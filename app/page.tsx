@@ -16,6 +16,7 @@ const coreFaculty = [
     name: "Valentinus Roby Hananto",
     title: "Lecturer, College of Information Science and Engineering",
     text: "Data science, machine learning, and business intelligence with a practical focus on real-world systems.",
+    image: "/HANANTOValentinusRoby.jpg",
   },
   {
     name: "Victor Kryssanov",
