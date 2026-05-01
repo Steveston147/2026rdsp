@@ -220,9 +220,14 @@ export default function Page() {
             <a href="#faculty">Faculty</a>
             <a href="#campus">Campus</a>
             <a href="#accommodation">Accommodation</a>
-            <a href="#apply" className="nav-cta">
-              Apply
-            </a>
+            <a
+  href={applicationFormUrl}
+  className="nav-cta"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Apply
+</a>
           </nav>
         </header>
 
