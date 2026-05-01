@@ -1,9 +1,8 @@
-// FILE: page.tsx
+// FILE: app/page.tsx
 // PATH: app/page.tsx
 
-const applyEmail = "rsjprwjp@st.ritsumei.ac.jp";
-const applySubject = "RDSP 2026 Enquiry";
-const applyLink = `mailto:${applyEmail}?subject=${encodeURIComponent(applySubject)}`;
+const applicationFormUrl =
+  "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=jUNJpAY2C0mET8ThXlNfyvNBMyPh0uxFoyd425258-dUREJCSzkxTEhCWk1EVUYzRUJCWVZXRURKMi4u";
 
 const coreFaculty = [
   {
@@ -27,7 +26,7 @@ const coreFaculty = [
   {
     name: "Mate Kovacs",
     title: "Assistant Professor, College of Information Science and Engineering",
-    text: "Natural Language Processing for Civic Tech, Language Modeling and large-scale text and social data analysis. ",
+    text: "Natural Language Processing for Civic Tech, Language Modeling and large-scale text and social data analysis.",
     image: "/kovac.jpg",
   },
   {
@@ -148,6 +147,16 @@ const quickFacts = [
     note: "No scholarships, waivers, or partner discounts are available for this program.",
   },
   {
+    label: "Application",
+    value: "Apply through Microsoft Forms",
+    note: "Please complete the required information in the application form first.",
+  },
+  {
+    label: "Minimum number",
+    value: "15 participants",
+    note: "If the minimum number is not reached, the program may not be offered.",
+  },
+  {
     label: "Accommodation",
     value: "OIC Seminar House",
     note: "Shared rooms separated by gender. Participants travel to the residence by themselves.",
@@ -179,6 +188,9 @@ const notIncludedItems = [
 ];
 
 const noteItems = [
+  "Applications are accepted through the Microsoft Forms application form on this page.",
+  "Please complete the required information in the form first.",
+  "The minimum number of participants is 15. If the minimum number is not reached, the program may not be offered.",
   "The first five faculty members listed on this page are confirmed.",
   "Additional special sessions or guest appearances may be announced later.",
   "Possible added content includes VR, laser printing, sports exchange, and cultural club activities.",
@@ -231,15 +243,23 @@ export default function Page() {
             </div>
 
             <div className="hero-actions">
-              <a className="btn btn-primary" href={applyLink}>
-                Enquire / Apply
+              <a
+                className="btn btn-primary"
+                href={applicationFormUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Apply Now
               </a>
               <a className="btn btn-secondary" href="#experience">
                 Explore the Program
               </a>
             </div>
 
-            <p className="hero-note">Limited capacity. Please apply early.</p>
+            <p className="hero-note">
+              Applications are accepted through Microsoft Forms. The minimum
+              number of participants is 15.
+            </p>
           </div>
 
           <div className="hero-media">
@@ -597,23 +617,61 @@ export default function Page() {
             ))}
           </div>
         </section>
-<section className="section">
-  <div className="section-head">
-    <p className="section-kicker">Eligibility</p>
-    <h2>Who can apply</h2>
-  </div>
 
-  <article className="card">
-    <ul className="list">
-      <li>
-        Applicants must be currently enrolled as undergraduate or graduate students.
-      </li>
-      <li>
-        High school students, gap year students, and working professionals are not eligible for this program.
-      </li>
-    </ul>
-  </article>
-</section>
+        <section className="section apply-section">
+          <div className="section-head">
+            <p className="section-kicker">Application</p>
+            <h2>How to apply</h2>
+            <p>
+              Applications for RDSP 2026 are accepted through the Microsoft
+              Forms link below. Please complete the required information in the
+              form first.
+            </p>
+          </div>
+
+          <article className="card application-card">
+            <div>
+              <h3>Before you apply</h3>
+              <p>
+                Please note that the minimum number of participants is 15. If
+                the minimum number is not reached, the program may not be
+                offered.
+              </p>
+            </div>
+
+            <div className="application-action">
+              <a
+                className="btn btn-primary"
+                href={applicationFormUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open Application Form
+              </a>
+            </div>
+          </article>
+        </section>
+
+        <section className="section">
+          <div className="section-head">
+            <p className="section-kicker">Eligibility</p>
+            <h2>Who can apply</h2>
+          </div>
+
+          <article className="card">
+            <ul className="list">
+              <li>
+                Applicants must be currently enrolled as undergraduate or
+                graduate students.
+              </li>
+              <li>
+                High school students, gap year students, and working
+                professionals are not eligible for this program.
+              </li>
+            </ul>
+          </article>
+        </section>
+
         <section id="accommodation" className="section alt">
           <div className="section-head">
             <p className="section-kicker">Accommodation</p>
@@ -685,11 +743,20 @@ export default function Page() {
                 Learn in English, live on campus, meet Ritsumeikan students,
                 and explore future technology in a real university environment.
               </p>
+              <p className="cta-note">
+                Please complete the Microsoft Forms application first. The
+                program requires a minimum of 15 participants.
+              </p>
             </div>
 
             <div className="cta-actions">
-              <a className="btn btn-primary" href={applyLink}>
-                Contact Us
+              <a
+                className="btn btn-primary"
+                href={applicationFormUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Apply Now
               </a>
               <a
                 className="btn btn-secondary"
@@ -1192,6 +1259,29 @@ export default function Page() {
           margin-bottom: 8px;
         }
 
+        .apply-section {
+          padding-top: 18px;
+        }
+
+        .application-card {
+          display: grid;
+          grid-template-columns: 1fr auto;
+          gap: 22px;
+          align-items: center;
+          background:
+            linear-gradient(135deg, rgba(181, 51, 59, 0.08), rgba(255, 255, 255, 0.95)),
+            #ffffff;
+        }
+
+        .application-card p {
+          max-width: 760px;
+        }
+
+        .application-action {
+          display: flex;
+          justify-content: flex-end;
+        }
+
         .list {
           margin: 0;
           padding-left: 20px;
@@ -1215,6 +1305,11 @@ export default function Page() {
         .cta-copy p:not(.section-kicker) {
           margin-top: 10px;
           max-width: 760px;
+        }
+
+        .cta-note {
+          font-weight: 700;
+          color: #a55500;
         }
 
         .final-cta {
@@ -1241,7 +1336,8 @@ export default function Page() {
           .two-col,
           .campus-life-grid,
           .cta-card,
-          .logo-band-card {
+          .logo-band-card,
+          .application-card {
             grid-template-columns: 1fr;
           }
 
@@ -1264,6 +1360,10 @@ export default function Page() {
           .site-header {
             flex-direction: column;
             align-items: flex-start;
+          }
+
+          .application-action {
+            justify-content: flex-start;
           }
         }
 
