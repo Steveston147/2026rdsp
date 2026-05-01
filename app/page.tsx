@@ -249,7 +249,7 @@ export default function Page() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Apply Now
+                Apply for RDSP 2026
               </a>
               <a className="btn btn-secondary" href="#experience">
                 Explore the Program
@@ -646,7 +646,7 @@ export default function Page() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Open Application Form
+                Apply for RDSP 2026
               </a>
             </div>
           </article>
@@ -756,7 +756,7 @@ export default function Page() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Apply Now
+                Apply for RDSP 2026
               </a>
               <a
                 className="btn btn-secondary"
