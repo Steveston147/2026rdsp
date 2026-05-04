@@ -138,7 +138,7 @@ const quickFacts = [
   },
   {
     label: "Program dates",
-    value: "July 16 – July 24, 2026",
+    value: "July 15 – July 24, 2026",
     note: "No classes on July 18, 19, and 20. These are free days.",
   },
   {
