@@ -1,8 +1,10 @@
 // FILE: app/page.tsx
 // PATH: app/page.tsx
 
-const applicationFormUrl =
-  "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=jUNJpAY2C0mET8ThXlNfyvNBMyPh0uxFoyd425258-dUREJCSzkxTEhCWk1EVUYzRUJCWVZXRURKMi4u";
+const applicationStatusText = "Applications Closed";
+
+const applicationClosedNote =
+  "Applications for RDSP 2026 are now closed. This page remains available for reference and future program information.";
 
 const coreFaculty = [
   {
@@ -148,8 +150,8 @@ const quickFacts = [
   },
   {
     label: "Application",
-    value: "Apply through Microsoft Forms",
-    note: "Please complete the required information in the application form first.",
+    value: applicationStatusText,
+    note: applicationClosedNote,
   },
   {
     label: "Minimum number",
@@ -188,15 +190,15 @@ const notIncludedItems = [
 ];
 
 const noteItems = [
-  "Applications are accepted through the Microsoft Forms application form on this page.",
-  "Please complete the required information in the form first.",
+  "Applications for RDSP 2026 are now closed.",
+  "This page remains available for reference and future program information.",
+  "Late applications cannot be accepted after the application period.",
   "The minimum number of participants is 15. If the minimum number is not reached, the program may not be offered.",
   "The first five faculty members listed on this page are confirmed.",
   "Additional special sessions or guest appearances may be announced later.",
   "Possible added content includes VR, laser printing, sports exchange, and cultural club activities.",
   "Program content, lecture titles, and exact activity details are subject to change.",
   "Participants must join from the first day to the final day.",
-  "The program has limited capacity, so early application is strongly recommended.",
   "No academic credit will be awarded for this program.",
   "Participants must arrive on July 15 (the day before the program starts). Check-in is required between 3:00 PM and 5:00 PM.",
   "Check-out is scheduled for July 25 (the day after the program ends). Changes to the program period are not allowed.",
@@ -220,14 +222,9 @@ export default function Page() {
             <a href="#faculty">Faculty</a>
             <a href="#campus">Campus</a>
             <a href="#accommodation">Accommodation</a>
-            <a
-  href={applicationFormUrl}
-  className="nav-cta"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Apply
-</a>
+            <a href="#apply" className="nav-cta nav-cta-closed">
+              {applicationStatusText}
+            </a>
           </nav>
         </header>
 
@@ -248,22 +245,16 @@ export default function Page() {
             </div>
 
             <div className="hero-actions">
-              <a
-                className="btn btn-primary"
-                href={applicationFormUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Apply for RDSP 2026
-              </a>
+              <span className="btn btn-primary btn-disabled" aria-disabled="true">
+                {applicationStatusText}
+              </span>
               <a className="btn btn-secondary" href="#experience">
                 Explore the Program
               </a>
             </div>
 
             <p className="hero-note">
-              Applications are accepted through Microsoft Forms. The minimum
-              number of participants is 15.
+              {applicationClosedNote}
             </p>
           </div>
 
@@ -627,32 +618,22 @@ export default function Page() {
           <div className="section-head">
             <p className="section-kicker">Application</p>
             <h2>How to apply</h2>
-            <p>
-              Applications for RDSP 2026 are accepted through the Microsoft
-              Forms link below. Please complete the required information in the
-              form first.
-            </p>
+            <p>{applicationClosedNote}</p>
           </div>
 
           <article className="card application-card">
             <div>
-              <h3>Before you apply</h3>
+              <h3>Application period has ended</h3>
               <p>
-                Please note that the minimum number of participants is 15. If
-                the minimum number is not reached, the program may not be
-                offered.
+                Applications for RDSP 2026 are now closed. Late applications
+                cannot be accepted after the application period.
               </p>
             </div>
 
             <div className="application-action">
-              <a
-                className="btn btn-primary"
-                href={applicationFormUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Apply for RDSP 2026
-              </a>
+              <span className="btn btn-primary btn-disabled" aria-disabled="true">
+                {applicationStatusText}
+              </span>
             </div>
           </article>
         </section>
@@ -749,20 +730,14 @@ export default function Page() {
                 and explore future technology in a real university environment.
               </p>
               <p className="cta-note">
-                Please complete the Microsoft Forms application first. The
-                program requires a minimum of 15 participants.
+                {applicationClosedNote}
               </p>
             </div>
 
             <div className="cta-actions">
-              <a
-                className="btn btn-primary"
-                href={applicationFormUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Apply for RDSP 2026
-              </a>
+              <span className="btn btn-primary btn-disabled" aria-disabled="true">
+                {applicationStatusText}
+              </span>
               <a
                 className="btn btn-secondary"
                 href="https://www.rsjprwjp.com/"
@@ -1012,6 +987,24 @@ export default function Page() {
           background: #ffffff;
           color: #12253e;
           border: 1px solid rgba(18, 37, 62, 0.12);
+        }
+
+        .nav-cta-closed {
+          background: #6b7280 !important;
+          color: #ffffff !important;
+        }
+
+        .btn-disabled {
+          background: #6b7280;
+          color: #ffffff;
+          cursor: not-allowed;
+          opacity: 0.9;
+          pointer-events: none;
+        }
+
+        .btn-disabled:hover {
+          transform: none;
+          opacity: 0.9;
         }
 
         .hero-note {
